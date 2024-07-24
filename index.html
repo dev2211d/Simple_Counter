@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter | Dev Chaudhary</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--top level button-->
+      <div class="btn-container">
+        <button id="info-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="white"
+            class="bi bi-info-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
+            />
+          </svg>
+        </button>
+        <button id="setting-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="white"
+            class="bi bi-gear-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
+            />
+          </svg>
+        </button>
+        <button id="refresh-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="white"
+            class="bi bi-arrow-clockwise"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+            />
+            <path
+              d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!--number displaying div with + and - button-->
+      <div class="main-display">
+        <button id="minus-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="white"
+            class="bi bi-dash-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"
+            />
+          </svg>
+        </button>
+        <p id="display-number">0</p>
+        <button id="plus-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="white"
+            class="bi bi-plus-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!--limit display will only appear if limit is applied-->
+      <div class="limit-div">
+        <p class="maxLimitRemaining">0</p>
+        <p>Available</p>
+        <p class="limit-reached">Limit Reached</p>
+      </div>
+
+      <!--info-btn-content-->
+      <div class="wrapper-info-btn">
+        <h1>Simple Counter</h1>
+
+        <pre>
+        A Simple tool for counting things and keeping
+                      track of numbers. </pre
+        >
+
+        <a href="" class="learn-more">Learn more</a>
+
+        <button id="coffee-btn"><a href="">Buy me a coffee</a></button>
+
+        <div><i></i><a href="" class="creator-name">Dev Chaudhary</a></div>
+
+        <!-- this will take us back to home screen and previous data will remain as it is -->
+        <button class="cross-btn" onclick="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="white"
+            class="bi bi-x-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!--setting-button-content-->
+      <div class="wrapper-setting-btn">
+        <h1 class="settings-class">Settings</h1>
+
+        <div id="set-number">
+          <label for="set-count">Set count =</label>
+          <input
+            type="number"
+            id="set-count"
+            min="0"
+            onchange="chooseStanding()"
+          />
+        </div>
+
+        <div id="limit-on-off">
+          <div class="limits">
+            <span>Limits Off / On </span>
+            <div class="toggler">
+              <input
+                id="toggler-1"
+                name="toggler-1"
+                type="checkbox"
+                value="1"
+              />
+              <label for="toggler-1"> </label>
+            </div>
+          </div>
+          <div class="max-limit">
+            <label for="max-num">Maximum = </label>
+            <input
+              type="number"
+              id="max-num"
+              onchange="chooseStandingMaxValue()"
+            />
+          </div>
+        </div>
+
+        <div class="color-flipper">
+          <button class="color1 clr"></button>
+          <button class="color2 clr"></button>
+          <button class="color3 clr"></button>
+          <button class="color4 clr"></button>
+          <button class="color5 clr"></button>
+          <button class="color6 clr"></button>
+          <button class="color7 clr"></button>
+          <button class="color8 clr"></button>
+        </div>
+
+        <button class="cross-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="white"
+            class="bi bi-x-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- reset-button-content -->
+      <div class="wrapper-reset-btn">
+        <div>Reset Counter?</div>
+        <div><button class="reset-yes" id="go-home">Yes</button></div>
+        <div>
+          <button class="reset-no" id="reset-home" onclick="resetToHome()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

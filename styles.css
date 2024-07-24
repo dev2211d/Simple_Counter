@@ -1,0 +1,443 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+body {
+  background-color: #141516;
+}
+/* .wrapper{
+    height:100vh;
+    position:relative; 
+} */
+.btn-container {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  gap: 30px;
+}
+.main-display {
+  visibility: hidden;
+  /* transition: opacity 0.3s; */
+}
+.main-display.active {
+  /* width:100vw; */
+  visibility: visible;
+  height: calc(100vh - 100px);
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  /* position: relative; */
+}
+#display-number {
+  color: white;
+  font-size: 300px;
+  user-select: none;
+  font-family: sans-serif;
+}
+#info-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  scale: 1;
+  transition: all 0.3s;
+}
+#info-btn:hover {
+  scale: 1.5;
+  transition: all 0.3s;
+}
+/* #info-btn:hover::before{
+
+} */
+#setting-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  scale: 1;
+  transition: all 0.3s;
+}
+#setting-btn:hover {
+  scale: 1.5;
+  transition: all 0.3s;
+}
+#refresh-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  scale: 1;
+  transition: all 0.3s;
+}
+#refresh-btn:hover {
+  scale: 1.5;
+  transition: all 0.3s;
+}
+#minus-btn {
+  visibility: hidden;
+}
+#minus-btn.active {
+  visibility: visible;
+  margin-left: 40px;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+#plus-btn {
+  margin-right: 40px;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.limit-div {
+  visibility: hidden;
+}
+.limit-div {
+  position: absolute;
+  color: white;
+  top: 85%;
+  left: 44%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.limit-div p:nth-child(1) {
+  font-size: 35px;
+}
+.limit-div p:nth-child(2) {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.limit-div p:nth-child(3) {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.wrapper-info-btn {
+  visibility: hidden;
+  /* display: none; */
+}
+.limits {
+  display: flex;
+}
+.wrapper-info-btn.active {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  visibility: visible;
+  /* display: block; */
+  color: white;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 24x;
+}
+.wrapper-info-btn a {
+  color: white;
+  /* text-decoration: none; */
+}
+.wrapper-info-btn pre {
+  color: white;
+  font-family: sans-serif;
+}
+#coffee-btn {
+  color: white;
+  background-color: #fb6263;
+  height: 60px;
+  width: 180px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: medium;
+  border: none;
+  /* outline: none; */
+}
+#coffee-btn a {
+  text-decoration: none;
+}
+#coffee-btn:hover {
+  scale: 1.1;
+  transition: all 0.5s;
+}
+.creator-name {
+  text-decoration: none;
+}
+.creator-name:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.learn-more:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.cross-btn {
+  background: transparent;
+  border: none;
+  /*this was causing this button to appear on left bottom to complete the transition somehow*/
+  /* scale: 1;
+    transition: all 0.3s; */
+}
+.cross-btn:hover {
+  scale: 1.2;
+  transition: all 0.3s;
+}
+.wrapper-setting-btn {
+  visibility: hidden;
+}
+.wrapper-setting-btn.active {
+  visibility: visible;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  visibility: visible;
+  color: white;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#set-number {
+  height: 76px;
+  width: 280px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  opacity: 0.8;
+}
+#set-count {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+}
+#set-count pre {
+  font-family: sans-serif;
+}
+#max-num {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+}
+.max-limit {
+  user-select: none;
+  opacity: 0.5;
+}
+.max-limit.checkbox-checked {
+  user-select: all;
+  opacity: 1;
+}
+.settings-class {
+  opacity: 0.8;
+}
+#limit-on-off {
+  height: 147px;
+  width: 280px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  opacity: 0.8;
+}
+#input-change {
+  height: 30px;
+  width: 80px;
+  background-color: #f3f3f3;
+}
+#max-num {
+  height: 30px;
+  width: 50px;
+}
+.color-flipper {
+  border: 2px solid grey;
+  border-radius: 10px;
+  width: 280px;
+  height: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.clr {
+  width: 40px;
+  height: 40px;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+.clr:hover {
+  scale: 1.2;
+  transition: all 0.3s;
+}
+.clr:focus {
+  border: 1px solid #f3f3f3;
+}
+.color1 {
+  background-color: #141516;
+}
+.color3 {
+  background-color: #f3f3f3;
+}
+.color5 {
+  background-color: #004291;
+}
+.color7 {
+  background-color: #ed1e79;
+}
+.color2 {
+  background-color: #607d8b;
+}
+.color4 {
+  background-color: #a700a5;
+}
+.color6 {
+  background-color: #00ad98;
+}
+.color8 {
+  background-color: #ffac02;
+}
+.toggler {
+  width: 50px;
+  height: 22px;
+}
+
+.toggler input {
+  display: none;
+}
+
+.toggler label {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 22px;
+  border: 1px solid #d6d6d6;
+  border-radius: 36px;
+  background: #e4e8e8;
+  cursor: pointer;
+}
+
+.toggler label::after {
+  display: block;
+  border-radius: 100%;
+  background-color: #d7062a;
+  content: "";
+}
+
+.toggler label::after {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%) translateX(-50%);
+  transition: left 0.15s ease-in-out, background-color 0.2s ease-out,
+    width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.toggler input:checked + label::after {
+  left: 75%;
+  background-color: #50ac5d;
+}
+
+.limit-reached {
+  visibility: hidden;
+}
+.limit-reached {
+  animation-name: visible-shock-wave;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /* transition: all 2s; */
+}
+@keyframes visible-shock-wave {
+  0% {
+    opacity: 0;
+  }
+  /* 25%{
+        opacity: 0.25;
+    } */
+  50% {
+    opacity: 1;
+  }
+  /* 75%{
+        opacity: 0.75;
+    } */
+  100% {
+    opacity: 0;
+  }
+}
+.wrapper-reset-btn {
+  visibility: hidden;
+}
+.wrapper-reset-btn.active {
+  visibility: visible;
+}
+.wrapper-reset-btn {
+  position: absolute;
+  top: 30%;
+  left: 43%;
+  color: #f3f3f3;
+  height: 210px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 30px;
+}
+.reset-yes {
+  width: 50px;
+  height: 40px;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  scale: 1;
+  /* transition: all 0.30s; */
+  color: white;
+  font-size: 20px;
+}
+.reset-yes:hover {
+  scale: 1.2;
+  transition: all 0.3s;
+}
+
+.reset-no {
+  width: 80px;
+  height: 40px;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  scale: 1;
+  /* transition: all 0.30s; */
+  color: white;
+  font-size: 20px;
+}
+.reset-no:hover {
+  scale: 1.2;
+}
